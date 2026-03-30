@@ -75,7 +75,7 @@ export default function HomePage() {
             <p className="anim-fade-up anim-d2 text-[16px] sm:text-[17px] text-secondary leading-[1.7] max-w-[500px] mb-10">
               20 years of shipping production software. Now I help companies
               build AI systems through my agency, and teach what I learn to a
-              community of 2,000+ engineers.
+              an AI developer community.
             </p>
 
             <div className="anim-fade-up anim-d3 flex flex-wrap gap-4">
@@ -168,7 +168,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground transition-colors"
               >
-                2,000+ engineers
+                an AI developer community
               </a>{" "}
               in the AI Engineer community.
             </p>
@@ -220,7 +220,7 @@ export default function HomePage() {
             className="group bg-card border border-border rounded-2xl p-8 sm:p-10 hover:border-foreground/15 hover:shadow-xl hover:shadow-foreground/[0.04] hover:-translate-y-1 active:translate-y-0 transition-all duration-300 flex flex-col"
           >
             <h3 className="font-display font-bold text-[clamp(1.4rem,2.5vw,1.65rem)] tracking-[-0.03em] leading-[1.2] mb-4 group-hover:text-accent transition-colors duration-300">
-              Join 2,000+ AI builders
+              Join the AI developer community
             </h3>
             <p className="text-[16px] text-secondary leading-[1.7] mb-8 flex-1">
               Engineers learning to build, ship, and monetise AI systems.

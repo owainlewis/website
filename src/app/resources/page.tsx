@@ -191,7 +191,7 @@ export default function ResourcesPage() {
                 AI Community
               </p>
               <h3 className="font-display font-bold tracking-tight mb-2 group-hover:text-accent transition-colors">
-                Join 2,000+ AI builders
+                Join the AI developer community
               </h3>
               <p className="text-[13px] text-secondary leading-relaxed">
                 Courses, live builds, code reviews, and real project templates.

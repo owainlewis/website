@@ -49,9 +49,8 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Hero */}
+      {/* Hero — introduce who you are */}
       <section className="relative overflow-hidden border-b border-border/40">
-        {/* Background image */}
         <div className="absolute inset-0">
           <Image
             src="/hero-bg.jpg"
@@ -65,50 +64,58 @@ export default function HomePage() {
 
         <div className="relative mx-auto max-w-[1120px] px-6 sm:px-8 pt-28 sm:pt-40 pb-32 sm:pb-44">
           <div className="max-w-xl">
-            <h1 className="anim-fade-up font-display text-[clamp(2rem,4.8vw,3.75rem)] font-extrabold tracking-[-0.035em] leading-[1.08] mb-5 max-w-lg">
-              Free Claude Code skills to build better software with AI
+            <p className="anim-fade-up font-mono text-[12px] uppercase tracking-[0.15em] text-signal font-medium mb-5">
+              AI Engineer &amp; Consultant
+            </p>
+
+            <h1 className="anim-fade-up anim-d1 font-display text-[clamp(2rem,4.8vw,3.75rem)] font-extrabold tracking-[-0.035em] leading-[1.08] mb-5 max-w-lg">
+              AI systems to give your business an unfair advantage
             </h1>
 
-            <p className="anim-fade-up anim-d1 text-[16px] sm:text-[17px] text-secondary leading-[1.7] max-w-[500px] mb-10">
-              Requirements. Architecture. Planning. Code review.
-              Install these skills once and use them on every project you
-              touch. Built from 20 years of shipping production software.
+            <p className="anim-fade-up anim-d2 text-[16px] sm:text-[17px] text-secondary leading-[1.7] max-w-[500px] mb-10">
+              20 years of shipping production software. Now I help companies
+              build AI systems through my agency, and teach what I learn to a
+              community of 2,000+ engineers.
             </p>
 
-            <div
-              id="free"
-              className="anim-fade-up anim-d2 max-w-[480px] mb-3"
-            >
-              <KitForm buttonText="Get the free skills" />
+            <div className="anim-fade-up anim-d3 flex flex-wrap gap-4">
+              <a
+                href={LINKS.gradientWork}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-foreground text-background font-semibold rounded-xl hover:opacity-90 active:scale-[0.98] transition-all text-[15px]"
+              >
+                Work with me
+              </a>
+              <a
+                href={LINKS.skool}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 border border-border bg-card text-foreground font-semibold rounded-xl hover:border-foreground/20 active:scale-[0.98] transition-all text-[15px]"
+              >
+                Join the community
+              </a>
             </div>
-            <p className="anim-fade-up anim-d3 text-[13px] text-muted max-w-[480px] leading-relaxed">
-              Get instant access to my personal Claude Code skills for
-              development.
-            </p>
           </div>
         </div>
       </section>
 
-      {/* Credibility — inline, not a separate visual section */}
+      {/* Credibility */}
       <div className="mx-auto max-w-[1120px] px-6 sm:px-8 py-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-[13px] text-muted border-b border-border/40">
         <span>
-          <strong className="text-foreground font-semibold">50+</strong>{" "}
-          production AI systems
-        </span>
-        <span className="text-border hidden sm:inline">|</span>
-        <span>
-          <strong className="text-foreground font-semibold">2,000+</strong>{" "}
-          engineers in community
+          An audience of over{" "}
+          <strong className="text-foreground font-semibold">60,000</strong>{" "}
+          engineers and business owners
         </span>
         <span className="text-border hidden sm:inline">|</span>
         <span>
           <strong className="text-foreground font-semibold">20 years</strong>{" "}
-          shipping software
+          shipping production software
         </span>
       </div>
 
       {/* About */}
-      <section className="mx-auto max-w-[1120px] px-6 sm:px-8 pt-20 sm:pt-24 pb-6 sm:pb-8">
+      <section className="mx-auto max-w-[1120px] px-6 sm:px-8 pt-20 sm:pt-24 pb-8">
         <div className="grid sm:grid-cols-[200px_1fr] gap-8 sm:gap-12 items-center max-w-3xl">
           <Image
             src="/editorial.jpg"
@@ -119,11 +126,12 @@ export default function HomePage() {
           />
           <div>
             <h2 className="font-display font-bold text-xl sm:text-2xl tracking-[-0.03em] mb-3">
-              Owain Lewis
+              About me
             </h2>
-            <p className="text-[16px] text-secondary leading-[1.7]">
-              Software engineer with 20 years of production experience. I build
-              AI systems for businesses through{" "}
+            <p className="text-[16px] text-secondary leading-[1.7] mb-4">
+              I&apos;m Owain — a software engineer who&apos;s spent two decades
+              building production systems. I now focus full-time on AI, building
+              real systems for businesses through{" "}
               <a
                 href={LINKS.gradientWork}
                 target="_blank"
@@ -131,8 +139,29 @@ export default function HomePage() {
                 className="text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground transition-colors"
               >
                 Gradient Work
-              </a>{" "}
-              and teach everything I learn to a community of{" "}
+              </a>
+              .
+            </p>
+            <p className="text-[16px] text-secondary leading-[1.7]">
+              I share everything I learn — on{" "}
+              <a
+                href={LINKS.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground transition-colors"
+              >
+                YouTube
+              </a>
+              , in my{" "}
+              <a
+                href={LINKS.newsletter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground transition-colors"
+              >
+                newsletter
+              </a>
+              , and with{" "}
               <a
                 href={LINKS.skool}
                 target="_blank"
@@ -140,17 +169,16 @@ export default function HomePage() {
                 className="text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground transition-colors"
               >
                 2,000+ engineers
-              </a>
-              .
+              </a>{" "}
+              in the AI Engineer community.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Two paths — deliberately asymmetric */}
-      <section className="mx-auto max-w-[1120px] px-6 sm:px-8 pt-14 sm:pt-16 pb-28 sm:pb-36">
+      {/* Two paths */}
+      <section className="mx-auto max-w-[1120px] px-6 sm:px-8 pt-14 sm:pt-16 pb-16 sm:pb-20">
         <div className="grid sm:grid-cols-[1.15fr_1fr] gap-6">
-          {/* Work with me — slightly larger */}
           <a
             href={LINKS.gradientWork}
             target="_blank"
@@ -185,7 +213,6 @@ export default function HomePage() {
             </span>
           </a>
 
-          {/* Community */}
           <a
             href={LINKS.skool}
             target="_blank"
@@ -221,27 +248,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
+      {/* Newsletter signup */}
       <section className="border-t border-border bg-surface">
-        <div className="mx-auto max-w-[1120px] px-6 sm:px-8 py-24 sm:py-32">
-          <div className="grid lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-center">
-            <div>
-              <h2 className="font-display text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold tracking-[-0.03em] mb-4 leading-[1.12]">
-                Your entire dev workflow, upgraded in one command
-              </h2>
-              <p className="text-[16px] text-secondary leading-[1.7] max-w-md">
-                Requirements, architecture, planning, code review, branching,
-                and commits. Free forever.
-              </p>
-            </div>
-            <div>
-              <div className="max-w-[480px] lg:ml-auto">
-                <KitForm buttonText="Get the free skills" />
-                <p className="text-[12px] text-muted mt-3">
-                  Instant access. Plus a short weekly email on new skills and
-                  builds.
-                </p>
-              </div>
+        <div className="mx-auto max-w-[1120px] px-6 sm:px-8 py-24 sm:py-28">
+          <div className="max-w-xl mx-auto text-center">
+            <h2 className="font-display font-bold text-xl sm:text-2xl tracking-[-0.03em] mb-2">
+              Stay in the loop
+            </h2>
+            <p className="text-[15px] text-secondary leading-[1.7] mb-6">
+              A short weekly email on what I&apos;m building, what&apos;s
+              working, and new resources I publish. No spam, unsubscribe
+              anytime.
+            </p>
+            <div className="max-w-md mx-auto">
+              <KitForm buttonText="Subscribe" />
             </div>
           </div>
         </div>

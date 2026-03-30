@@ -22,12 +22,12 @@ export default function HomePage() {
           >
             Owain Lewis
           </a>
-          <div className="flex items-center gap-5 sm:gap-6">
+          <div className="flex items-center gap-4 sm:gap-6">
             <a
               href={LINKS.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[13px] text-secondary hover:text-foreground transition-colors hidden sm:block"
+              className="text-[12px] sm:text-[13px] text-secondary hover:text-foreground transition-colors"
             >
               YouTube
             </a>
@@ -35,7 +35,7 @@ export default function HomePage() {
               href={LINKS.skool}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[13px] text-secondary hover:text-foreground transition-colors hidden sm:block"
+              className="text-[12px] sm:text-[13px] text-secondary hover:text-foreground transition-colors hidden sm:block"
             >
               Community
             </a>
@@ -43,9 +43,9 @@ export default function HomePage() {
               href={LINKS.newsletter}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[13px] text-secondary hover:text-foreground transition-colors hidden sm:block"
+              className="text-[12px] sm:text-[13px] text-secondary hover:text-foreground transition-colors"
             >
-              AI Newsletter
+              Newsletter
             </a>
           </div>
         </div>
@@ -53,49 +53,46 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border/40">
-        <div className="relative mx-auto max-w-[1120px] px-6 sm:px-8 pt-24 sm:pt-36 pb-28 sm:pb-40">
-          <div className="grid lg:grid-cols-[1fr_320px] gap-12 lg:gap-24 items-center">
-            <div>
-              <h1 className="anim-fade-up font-display text-[clamp(2rem,4.8vw,3.75rem)] font-extrabold tracking-[-0.035em] leading-[1.08] mb-5">
-                Free Claude Code skills
-                <br className="hidden sm:block" /> to build better software with AI
-              </h1>
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/hero-bg.jpg"
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
+        </div>
 
-              <p className="anim-fade-up anim-d1 text-[16px] sm:text-[17px] text-secondary leading-[1.7] max-w-[500px] mb-10">
-                Requirements. Architecture. Planning. Code review. Deployment.
-                Install these skills once and use them on every project you
-                touch. Built from 20 years of shipping production software.
-              </p>
+        <div className="relative mx-auto max-w-[1120px] px-6 sm:px-8 pt-28 sm:pt-40 pb-32 sm:pb-44">
+          <div className="max-w-xl">
+            <h1 className="anim-fade-up font-display text-[clamp(2rem,4.8vw,3.75rem)] font-extrabold tracking-[-0.035em] leading-[1.08] mb-5 max-w-lg">
+              Free Claude Code skills to build better software with AI
+            </h1>
 
-              <div
-                id="free"
-                className="anim-fade-up anim-d2 max-w-[480px] mb-3"
-              >
-                <KitForm buttonText="Get the free skills" />
-              </div>
-              <p className="anim-fade-up anim-d3 text-[13px] text-muted max-w-[480px] leading-relaxed">
-                Enter your email for instant access to Blueprint — production-grade
-                Claude Code skills covering the full dev lifecycle.
-              </p>
+            <p className="anim-fade-up anim-d1 text-[16px] sm:text-[17px] text-secondary leading-[1.7] max-w-[500px] mb-10">
+              Requirements. Architecture. Planning. Code review.
+              Install these skills once and use them on every project you
+              touch. Built from 20 years of shipping production software.
+            </p>
+
+            <div
+              id="free"
+              className="anim-fade-up anim-d2 max-w-[480px] mb-3"
+            >
+              <KitForm buttonText="Get the free skills" />
             </div>
-
-            {/* Photo */}
-            <div className="hidden lg:block anim-scale-in anim-d4">
-              <Image
-                src="/hero.jpg"
-                alt="Owain Lewis"
-                width={320}
-                height={320}
-                className="rounded-2xl object-cover w-full h-auto grayscale"
-                priority
-              />
-            </div>
+            <p className="anim-fade-up anim-d3 text-[13px] text-muted max-w-[480px] leading-relaxed">
+              Get instant access to my personal Claude Code skills for
+              development.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Credibility — inline, not a separate visual section */}
-      <div className="mx-auto max-w-[1120px] px-6 sm:px-8 py-6 flex flex-wrap items-center justify-center sm:justify-start gap-x-8 gap-y-2 text-[13px] sm:text-[13px] text-muted border-b border-border/40">
+      <div className="mx-auto max-w-[1120px] px-6 sm:px-8 py-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-[13px] text-muted border-b border-border/40">
         <span>
           <strong className="text-foreground font-semibold">50+</strong>{" "}
           production AI systems
@@ -112,8 +109,48 @@ export default function HomePage() {
         </span>
       </div>
 
+      {/* About */}
+      <section className="mx-auto max-w-[1120px] px-6 sm:px-8 pt-20 sm:pt-24 pb-6 sm:pb-8">
+        <div className="grid sm:grid-cols-[200px_1fr] gap-8 sm:gap-12 items-center max-w-3xl">
+          <Image
+            src="/editorial.jpg"
+            alt="Owain Lewis"
+            width={200}
+            height={250}
+            className="rounded-2xl object-cover w-full h-auto"
+          />
+          <div>
+            <h2 className="font-display font-bold text-xl sm:text-2xl tracking-[-0.03em] mb-3">
+              Owain Lewis
+            </h2>
+            <p className="text-[16px] text-secondary leading-[1.7]">
+              Software engineer with 20 years of production experience. I build
+              AI systems for businesses through{" "}
+              <a
+                href={LINKS.gradientWork}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground transition-colors"
+              >
+                Gradient Work
+              </a>{" "}
+              and teach everything I learn to a community of{" "}
+              <a
+                href={LINKS.skool}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground transition-colors"
+              >
+                2,000+ engineers
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Two paths — deliberately asymmetric */}
-      <section className="mx-auto max-w-[1120px] px-6 sm:px-8 py-28 sm:py-36">
+      <section className="mx-auto max-w-[1120px] px-6 sm:px-8 pt-14 sm:pt-16 pb-28 sm:pb-36">
         <div className="grid sm:grid-cols-[1.15fr_1fr] gap-6">
           {/* Work with me — slightly larger */}
           <a
@@ -125,7 +162,7 @@ export default function HomePage() {
             <h3 className="font-display font-bold text-[clamp(1.4rem,2.5vw,1.65rem)] tracking-[-0.03em] leading-[1.2] mb-4">
               Get AI working in your business
             </h3>
-            <p className="text-[15px] sm:text-[15px] text-white/55 leading-[1.7] mb-8 flex-1">
+            <p className="text-[16px] text-white/55 leading-[1.7] mb-8 flex-1">
               You have a problem that AI can solve. I&apos;ll design, build, and
               ship a production system tailored to your business — in weeks, not
               months.
@@ -160,7 +197,7 @@ export default function HomePage() {
             <h3 className="font-display font-bold text-[clamp(1.4rem,2.5vw,1.65rem)] tracking-[-0.03em] leading-[1.2] mb-4 group-hover:text-accent transition-colors duration-300">
               Join 2,000+ AI builders
             </h3>
-            <p className="text-[15px] text-secondary leading-[1.7] mb-8 flex-1">
+            <p className="text-[16px] text-secondary leading-[1.7] mb-8 flex-1">
               Engineers learning to build, ship, and monetise AI systems.
               Courses, live builds, code reviews, and real project templates.
             </p>
@@ -194,9 +231,9 @@ export default function HomePage() {
               <h2 className="font-display text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold tracking-[-0.03em] mb-4 leading-[1.12]">
                 Your entire dev workflow, upgraded in one command
               </h2>
-              <p className="text-secondary leading-relaxed max-w-md">
+              <p className="text-[16px] text-secondary leading-[1.7] max-w-md">
                 Requirements, architecture, planning, code review, branching,
-                commits, deployment. Free forever.
+                and commits. Free forever.
               </p>
             </div>
             <div>

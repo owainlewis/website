@@ -6,8 +6,6 @@ const FOOTER_LINKS = [
   { label: "LinkedIn", href: LINKS.linkedin },
   { label: "YouTube", href: LINKS.youtube },
   { label: "Newsletter", href: LINKS.newsletter },
-  { label: "Gradient Work", href: LINKS.gradientWork },
-  { label: "AI Engineer", href: LINKS.skool },
 ] as const;
 
 export default function HomePage() {

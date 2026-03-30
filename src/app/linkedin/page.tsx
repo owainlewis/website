@@ -57,11 +57,6 @@ export default function LinkedInPage() {
           Enter your email and get instant access. Plus a short weekly email when
           new skills and builds are published.
         </p>
-
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border text-[13px] text-secondary">
-          <span className="w-2 h-2 rounded-full bg-signal" />
-          Used by 2,000+ engineers to ship AI to production
-        </div>
       </div>
     </main>
   );

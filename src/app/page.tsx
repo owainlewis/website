@@ -61,7 +61,7 @@ export default function HomePage() {
                 <br className="hidden sm:block" /> to build better software with AI
               </h1>
 
-              <p className="anim-fade-up anim-d1 text-[17px] text-secondary leading-[1.65] max-w-[500px] mb-10">
+              <p className="anim-fade-up anim-d1 text-[16px] sm:text-[17px] text-secondary leading-[1.7] max-w-[500px] mb-10">
                 Requirements. Architecture. Planning. Code review. Deployment.
                 Install these skills once and use them on every project you
                 touch. Built from 20 years of shipping production software.
@@ -95,7 +95,7 @@ export default function HomePage() {
       </section>
 
       {/* Credibility — inline, not a separate visual section */}
-      <div className="mx-auto max-w-[1120px] px-6 sm:px-8 py-6 flex flex-wrap items-center justify-start gap-x-8 gap-y-2 text-[13px] text-muted border-b border-border/40">
+      <div className="mx-auto max-w-[1120px] px-6 sm:px-8 py-6 flex flex-wrap items-center justify-center sm:justify-start gap-x-8 gap-y-2 text-[13px] sm:text-[13px] text-muted border-b border-border/40">
         <span>
           <strong className="text-foreground font-semibold">50+</strong>{" "}
           production AI systems
@@ -125,7 +125,7 @@ export default function HomePage() {
             <h3 className="font-display font-bold text-[clamp(1.4rem,2.5vw,1.65rem)] tracking-[-0.03em] leading-[1.2] mb-4">
               Get AI working in your business
             </h3>
-            <p className="text-[15px] text-white/55 leading-[1.65] mb-8 flex-1">
+            <p className="text-[15px] sm:text-[15px] text-white/55 leading-[1.7] mb-8 flex-1">
               You have a problem that AI can solve. I&apos;ll design, build, and
               ship a production system tailored to your business — in weeks, not
               months.
@@ -160,7 +160,7 @@ export default function HomePage() {
             <h3 className="font-display font-bold text-[clamp(1.4rem,2.5vw,1.65rem)] tracking-[-0.03em] leading-[1.2] mb-4 group-hover:text-accent transition-colors duration-300">
               Join 2,000+ AI builders
             </h3>
-            <p className="text-[15px] text-secondary leading-[1.65] mb-8 flex-1">
+            <p className="text-[15px] text-secondary leading-[1.7] mb-8 flex-1">
               Engineers learning to build, ship, and monetise AI systems.
               Courses, live builds, code reviews, and real project templates.
             </p>
@@ -214,23 +214,23 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="border-t border-border">
-        <div className="mx-auto max-w-[1120px] px-6 sm:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-[12px] text-muted">
-            &copy; {new Date().getFullYear()} Owain Lewis
-          </span>
-          <div className="flex gap-6">
+        <div className="mx-auto max-w-[1120px] px-6 sm:px-8 py-8 flex flex-col items-center gap-4 text-center">
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             {FOOTER_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[12px] text-muted hover:text-foreground transition-colors"
+                className="text-[12px] text-muted hover:text-foreground transition-colors whitespace-nowrap"
               >
                 {link.label}
               </a>
             ))}
           </div>
+          <span className="text-[12px] text-muted">
+            &copy; {new Date().getFullYear()} Owain Lewis
+          </span>
         </div>
       </footer>
     </>

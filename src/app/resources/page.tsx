@@ -61,6 +61,24 @@ const SKILLS = [
     description:
       "Pick up a Linear issue, implement it, verify the acceptance criteria, commit with the issue ID, and mark it done. Full lifecycle in one command.",
   },
+  {
+    command: "/blueprint:refactor",
+    name: "Refactor",
+    description:
+      "Simplify and clean up code without changing behavior. Removes dead code, improves clarity, and makes your codebase more elegant.",
+  },
+  {
+    command: "/blueprint:tdd",
+    name: "TDD",
+    description:
+      "Build features test-first. Write failing tests that define the behavior, then implement until green. Red-green-refactor, automated.",
+  },
+  {
+    command: "/blueprint:coverage",
+    name: "Coverage",
+    description:
+      "Evaluate test coverage for recent code and fill gaps with high-value tests. Only adds tests worth having — no filler.",
+  },
 ] as const;
 
 export default function ResourcesPage() {
@@ -118,7 +136,7 @@ export default function ResourcesPage() {
             Quick install
           </h2>
           <p className="text-white/60 text-[14px] leading-relaxed mb-5">
-            Run this in your terminal to add Blueprint to Claude Code. All 9
+            Run this in your terminal to add Blueprint to Claude Code. All 12
             skills will be available in any project.
           </p>
           <div className="bg-white/[0.06] rounded-lg p-4 font-mono text-[13px] text-white/80 overflow-x-auto">

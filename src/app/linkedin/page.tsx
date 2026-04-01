@@ -21,13 +21,21 @@ export default function LinkedInPage() {
           production code.
         </p>
 
-        <div className="text-left max-w-sm mx-auto mb-8 sm:mb-10 space-y-1 sm:space-y-2">
+        <div className="max-w-md mx-auto mb-4">
+          <KitForm buttonText="Get the free skills" />
+        </div>
+
+        <p className="text-[12px] text-muted mb-8 sm:mb-10">
+          Enter your email and get instant access. Plus a short weekly email when
+          new skills and builds are published.
+        </p>
+
+        <div className="text-left max-w-sm mx-auto space-y-1 sm:space-y-2">
           {[
-            ["Requirements", "Turn rough notes into structured specs"],
-            ["Architecture", "Design your system before writing code"],
-            ["Plan", "Break work into phased, atomic tasks"],
-            ["Code Review", "Catch real issues, not style nitpicks"],
-            ["+ more", "Branching, commits, task execution, Linear integration"],
+            ["Requirements → Plan", "From rough notes to phased, atomic tasks"],
+            ["Code Review & Refactor", "Catch real issues, simplify code"],
+            ["TDD & Coverage", "Test-first development, fill coverage gaps"],
+            ["Git & Linear", "Branching, commits, and issue tracking built in"],
           ].map(([title, desc]) => (
             <div key={title} className="flex gap-2.5 sm:gap-3 py-0.5 sm:py-1">
               <span className="text-signal mt-0.5 shrink-0">
@@ -48,15 +56,6 @@ export default function LinkedInPage() {
             </div>
           ))}
         </div>
-
-        <div className="max-w-md mx-auto mb-4">
-          <KitForm buttonText="Get the free skills" />
-        </div>
-
-        <p className="text-[12px] text-muted mb-10">
-          Enter your email and get instant access. Plus a short weekly email when
-          new skills and builds are published.
-        </p>
       </div>
     </main>
   );

@@ -9,19 +9,19 @@ export const metadata: Metadata = {
 
 export default function LinkedInPage() {
   return (
-    <main className="flex min-h-dvh items-center justify-center px-6">
+    <main className="flex min-h-dvh items-start sm:items-center justify-center px-6 py-10 sm:py-12">
       <div className="w-full max-w-lg text-center">
-        <h1 className="font-display text-[clamp(1.75rem,4vw,2.75rem)] font-extrabold tracking-[-0.03em] leading-[1.15] mb-6">
+        <h1 className="font-display text-[1.5rem] sm:text-[clamp(1.75rem,4vw,2.75rem)] font-extrabold tracking-[-0.03em] leading-[1.15] mb-4 sm:mb-6">
           Free Claude Code skills to build better software with AI
         </h1>
 
-        <p className="text-[16px] text-secondary leading-relaxed mb-8">
+        <p className="text-[15px] sm:text-[16px] text-secondary leading-relaxed mb-6 sm:mb-8">
           Install these skills in Claude Code and get an instant upgrade to your
           entire dev workflow — from writing requirements to deploying
           production code.
         </p>
 
-        <div className="text-left max-w-sm mx-auto mb-10 space-y-2">
+        <div className="text-left max-w-sm mx-auto mb-8 sm:mb-10 space-y-1 sm:space-y-2">
           {[
             ["Requirements", "Turn rough notes into structured specs"],
             ["Architecture", "Design your system before writing code"],
@@ -29,9 +29,9 @@ export default function LinkedInPage() {
             ["Code Review", "Catch real issues, not style nitpicks"],
             ["+ more", "Branching, commits, task execution, Linear integration"],
           ].map(([title, desc]) => (
-            <div key={title} className="flex gap-3 py-1">
+            <div key={title} className="flex gap-2.5 sm:gap-3 py-0.5 sm:py-1">
               <span className="text-signal mt-0.5 shrink-0">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" className="sm:w-[18px] sm:h-[18px]">
                   <path
                     d="M4 9l3.5 3.5L14 5"
                     stroke="currentColor"
@@ -42,8 +42,8 @@ export default function LinkedInPage() {
                 </svg>
               </span>
               <div>
-                <span className="font-semibold text-[14px]">{title}</span>
-                <span className="text-[13px] text-secondary"> — {desc}</span>
+                <span className="font-semibold text-[13px] sm:text-[14px]">{title}</span>
+                <span className="text-[12px] sm:text-[13px] text-secondary"> — {desc}</span>
               </div>
             </div>
           ))}

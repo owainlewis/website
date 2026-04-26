@@ -11,11 +11,14 @@ export default function YouTubePage() {
   return (
     <main className="flex min-h-dvh items-start sm:items-center justify-center px-6 py-10 sm:py-12">
       <div className="w-full max-w-lg text-center">
-        <h1 className="font-display text-[1.5rem] sm:text-[clamp(1.75rem,4vw,2.75rem)] font-extrabold tracking-[-0.03em] leading-[1.15] mb-4 sm:mb-6">
-          Free Claude Code skills to build better software with AI
+        <p className="eyebrow mb-6 justify-center">Free Skills</p>
+
+        <h1 className="font-serif text-[clamp(2rem,5vw,3.25rem)] tracking-[-0.02em] leading-[1.05] mb-5">
+          Claude Code skills to{" "}
+          <em className="italic">build better software</em> with AI.
         </h1>
 
-        <p className="text-[15px] sm:text-[16px] text-secondary leading-relaxed mb-6 sm:mb-8">
+        <p className="text-[17px] sm:text-[18px] text-secondary leading-[1.65] mb-8">
           Install these skills in Claude Code and get an instant upgrade to your
           entire dev workflow — from writing requirements to deploying
           production code.
@@ -25,21 +28,21 @@ export default function YouTubePage() {
           <KitForm buttonText="Get the free skills" />
         </div>
 
-        <p className="text-[12px] text-muted mb-8 sm:mb-10">
+        <p className="text-[12px] text-muted mb-10">
           Enter your email and get instant access. Plus a short weekly email when
           new skills and builds are published.
         </p>
 
-        <div className="text-left max-w-sm mx-auto space-y-1 sm:space-y-2">
+        <div className="text-left max-w-sm mx-auto space-y-2">
           {[
             ["Requirements → Plan", "From rough notes to phased, atomic tasks"],
             ["Code Review & Refactor", "Catch real issues, simplify code"],
             ["TDD & Coverage", "Test-first development, fill coverage gaps"],
             ["Git & Linear", "Branching, commits, and issue tracking built in"],
           ].map(([title, desc]) => (
-            <div key={title} className="flex gap-2.5 sm:gap-3 py-0.5 sm:py-1">
-              <span className="text-signal mt-0.5 shrink-0">
-                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" className="sm:w-[18px] sm:h-[18px]">
+            <div key={title} className="flex gap-3 py-1">
+              <span className="text-accent mt-0.5 shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path
                     d="M4 9l3.5 3.5L14 5"
                     stroke="currentColor"
@@ -50,8 +53,8 @@ export default function YouTubePage() {
                 </svg>
               </span>
               <div>
-                <span className="font-semibold text-[13px] sm:text-[14px]">{title}</span>
-                <span className="text-[12px] sm:text-[13px] text-secondary"> — {desc}</span>
+                <span className="font-semibold text-[15px]">{title}</span>
+                <span className="text-[14px] text-secondary"> — {desc}</span>
               </div>
             </div>
           ))}

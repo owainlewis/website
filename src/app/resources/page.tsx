@@ -8,76 +8,64 @@ export const metadata: Metadata = {
 
 const SKILLS = [
   {
-    command: "/blueprint:requirements",
-    name: "Requirements",
+    command: "/blueprint:spec",
+    name: "Spec",
     description:
-      "Turn rough notes into a structured requirements document. Asks the right questions first, then produces atomic, testable requirements.",
-  },
-  {
-    command: "/blueprint:architecture",
-    name: "Architecture",
-    description:
-      "Convert requirements into a technical architecture. System design, component definitions, data flow, and technical decisions — before you write a line of code.",
+      "Write an implementation spec when a task has decisions, invariants, or boundaries worth surfacing before coding.",
   },
   {
     command: "/blueprint:plan",
     name: "Plan",
     description:
-      "Break architecture into phased, atomic implementation tasks. Each phase produces working, runnable software — not layers of scaffolding.",
+      "Break a project, phase, spec, or rough request into small agent-ready tasks with acceptance criteria and verification.",
   },
   {
-    command: "/blueprint:branch",
-    name: "Branch",
+    command: "/blueprint:build",
+    name: "Build",
     description:
-      "Create conventional git branches with proper naming. Supports feature, fix, hotfix, docs, refactor, and more. Prevents overwrites and validates naming.",
-  },
-  {
-    command: "/blueprint:task",
-    name: "Task",
-    description:
-      "Pick up a work item from Linear, Jira, GitHub Issues, or a plain description — then execute it end-to-end. Branch, build, verify, commit.",
-  },
-  {
-    command: "/blueprint:review",
-    name: "Code Review",
-    description:
-      "Review your changes like a senior engineer. Checks correctness, security, simplicity, and robustness. Ignores style nitpicks, catches real issues.",
-  },
-  {
-    command: "/blueprint:commit",
-    name: "Commit",
-    description:
-      "Stage and commit with well-crafted conventional commit messages. Reviews diffs, checks for secrets, and explains the \"why\" not just the \"what.\"",
-  },
-  {
-    command: "/blueprint:create-linear-issue",
-    name: "Create Linear Issue",
-    description:
-      "Create well-defined Linear issues through guided conversation. Keeps issues small, describes intent over implementation, splits complex work automatically.",
-  },
-  {
-    command: "/blueprint:complete-linear-issue",
-    name: "Complete Linear Issue",
-    description:
-      "Pick up a Linear issue, implement it, verify the acceptance criteria, commit with the issue ID, and mark it done. Full lifecycle in one command.",
-  },
-  {
-    command: "/blueprint:refactor",
-    name: "Refactor",
-    description:
-      "Simplify and clean up code without changing behavior. Removes dead code, improves clarity, and makes your codebase more elegant.",
+      "Implement one task or scoped change: make the change, add valuable tests, and verify it works.",
   },
   {
     command: "/blueprint:tdd",
     name: "TDD",
     description:
-      "Build features test-first. Write failing tests that define the behavior, then implement until green. Red-green-refactor, automated.",
+      "Use test-first development for behavioral changes. Write a failing test, make it pass, then simplify.",
+  },
+  {
+    command: "/blueprint:review",
+    name: "Review",
+    description:
+      "Review a spec or concrete code changes and report evidence-backed bugs, regressions, and risks.",
+  },
+  {
+    command: "/blueprint:refactor",
+    name: "Refactor",
+    description:
+      "Refactor code to simplify it without changing behavior. Removes duplication, dead code, and unnecessary complexity.",
   },
   {
     command: "/blueprint:coverage",
     name: "Coverage",
     description:
-      "Evaluate test coverage for recent code and fill gaps with high-value tests. Only adds tests worth having — no filler.",
+      "Evaluate test coverage and fill real gaps with high-value tests. Only adds tests worth having — no filler.",
+  },
+  {
+    command: "/blueprint:debug",
+    name: "Debug",
+    description:
+      "Debug systematically: observe, hypothesize, test, fix, verify. For broken behavior, failing tests, or anything that doesn't match expectations.",
+  },
+  {
+    command: "/blueprint:compress",
+    name: "Compress",
+    description:
+      "Compress agent-facing instructions to the fewest words that preserve behavior, constraints, and clarity. For specs, plans, prompts, AGENTS.md.",
+  },
+  {
+    command: "/blueprint:commit",
+    name: "Commit",
+    description:
+      "Stage and commit the intended changes with a clear message. Reviews the diff, checks for secrets, explains the why.",
   },
 ] as const;
 
@@ -89,7 +77,7 @@ export default function ResourcesPage() {
       <div className="relative mx-auto max-w-3xl px-6 py-16 sm:py-24">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-signal/10 text-signal text-[13px] font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/15 text-foreground text-[13px] font-medium mb-7">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path
                 d="M3 8l3.5 3.5L13 4"
@@ -102,11 +90,13 @@ export default function ResourcesPage() {
             You&apos;re in — here are your skills
           </div>
 
-          <h1 className="font-display text-3xl sm:text-4xl font-extrabold tracking-[-0.03em] leading-tight mb-4">
-            Blueprint: Claude Code skills to build better software with AI
+          <h1 className="font-serif text-[clamp(2rem,4.5vw,3.25rem)] tracking-[-0.02em] leading-[1.05] mb-5">
+            Blueprint:{" "}
+            <em className="italic">Claude Code skills</em> to build better
+            software with AI.
           </h1>
 
-          <p className="text-secondary max-w-lg mx-auto leading-relaxed mb-8">
+          <p className="text-[17px] text-secondary max-w-lg mx-auto leading-[1.65] mb-9">
             The exact skills I use to spec, build, review, and ship every
             project. Install them once, use them forever, and check back —
             new skills are added regularly.
@@ -116,7 +106,7 @@ export default function ResourcesPage() {
             href={LINKS.blueprint}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-foreground text-background font-semibold rounded-xl hover:opacity-90 transition-opacity text-[15px]"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-accent text-foreground font-semibold rounded-full hover:brightness-95 transition-all text-[15px]"
           >
             <svg
               width="20"
@@ -132,21 +122,22 @@ export default function ResourcesPage() {
 
         {/* Install instructions */}
         <div className="bg-foreground text-white rounded-2xl p-6 sm:p-8 mb-16">
-          <h2 className="font-display font-bold text-lg tracking-tight mb-4">
-            Quick install
+          <h2 className="font-serif text-[22px] tracking-[-0.01em] mb-3">
+            Quick <em className="italic text-accent">install.</em>
           </h2>
-          <p className="text-white/60 text-[14px] leading-relaxed mb-5">
-            Run this in your terminal to add Blueprint to Claude Code. All 12
-            skills will be available in any project.
+          <p className="text-white/60 text-[15px] leading-[1.65] mb-5">
+            Run this in your terminal to add Blueprint to Claude Code. Every
+            skill will be available in any project.
           </p>
           <div className="bg-white/[0.06] rounded-lg p-4 font-mono text-[13px] text-white/80 overflow-x-auto">
             claude plugin add owainlewis/blueprint
           </div>
         </div>
 
-        {/* All 9 skills */}
-        <h2 className="font-display font-bold text-xl tracking-tight mb-8">
-          All skills
+        {/* All skills */}
+        <p className="eyebrow mb-3">The skills</p>
+        <h2 className="font-serif text-[clamp(1.6rem,2.8vw,2rem)] tracking-[-0.02em] leading-[1.15] mb-8">
+          All <em className="italic">ten skills.</em>
         </h2>
 
         <div className="space-y-4 mb-16">
@@ -161,14 +152,14 @@ export default function ResourcesPage() {
                 </span>
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <h3 className="font-display font-bold tracking-tight">
+                    <h3 className="font-serif text-[19px] tracking-[-0.01em]">
                       {skill.name}
                     </h3>
-                    <code className="text-[12px] font-mono text-accent bg-accent/[0.06] px-2 py-0.5 rounded">
+                    <code className="text-[12px] font-mono text-foreground bg-accent/15 px-2 py-0.5 rounded">
                       {skill.command}
                     </code>
                   </div>
-                  <p className="text-[14px] text-secondary leading-relaxed">
+                  <p className="text-[15px] text-secondary leading-[1.65]">
                     {skill.description}
                   </p>
                 </div>
@@ -179,23 +170,26 @@ export default function ResourcesPage() {
 
         {/* Next steps */}
         <div className="border-t border-border pt-16">
-          <h2 className="font-display font-bold text-xl tracking-tight mb-6 text-center">
-            Want to go deeper?
-          </h2>
+          <div className="text-center mb-8">
+            <p className="eyebrow mb-3">Next</p>
+            <h2 className="font-serif text-[clamp(1.6rem,2.8vw,2rem)] tracking-[-0.02em] leading-[1.15]">
+              Want to go <em className="italic">deeper?</em>
+            </h2>
+          </div>
           <div className="grid sm:grid-cols-2 gap-4">
             <a
               href={LINKS.gradientWork}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-card border border-border rounded-xl p-6 hover:border-accent/30 transition-colors"
+              className="group bg-card border border-border rounded-xl p-6 hover:border-foreground/20 transition-colors"
             >
-              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-signal font-medium mb-2">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-secondary font-medium mb-3">
                 Work with me
               </p>
-              <h3 className="font-display font-bold tracking-tight mb-2 group-hover:text-accent transition-colors">
-                Get AI built for your business
+              <h3 className="font-serif text-[20px] tracking-[-0.01em] mb-2">
+                Get AI <em className="italic">built for your business.</em>
               </h3>
-              <p className="text-[13px] text-secondary leading-relaxed">
+              <p className="text-[14px] text-secondary leading-[1.65]">
                 Production AI systems designed, built, and shipped in weeks.
               </p>
             </a>
@@ -203,15 +197,15 @@ export default function ResourcesPage() {
               href={LINKS.skool}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-card border border-border rounded-xl p-6 hover:border-accent/30 transition-colors"
+              className="group bg-card border border-border rounded-xl p-6 hover:border-foreground/20 transition-colors"
             >
-              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-signal font-medium mb-2">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-secondary font-medium mb-3">
                 AI Community
               </p>
-              <h3 className="font-display font-bold tracking-tight mb-2 group-hover:text-accent transition-colors">
-                Join the AI developer community
+              <h3 className="font-serif text-[20px] tracking-[-0.01em] mb-2">
+                Join the <em className="italic">AI developer community.</em>
               </h3>
-              <p className="text-[13px] text-secondary leading-relaxed">
+              <p className="text-[14px] text-secondary leading-[1.65]">
                 Courses, live builds, code reviews, and real project templates.
               </p>
             </a>

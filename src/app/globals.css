@@ -4,8 +4,7 @@
   --background: #fafaf8;
   --foreground: #1a1a1a;
   --card: #ffffff;
-  --accent: #2c6ab5;
-  --signal: #dc5a1e;
+  --accent: #c8e250;
   --border: #e8e8e4;
   --text-secondary: #64645e;
   --text-muted: #a0a098;
@@ -17,7 +16,6 @@
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-accent: var(--accent);
-  --color-signal: var(--signal);
   --color-border: var(--border);
   --color-secondary: var(--text-secondary);
   --color-muted: var(--text-muted);
@@ -30,12 +28,32 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 17px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
 }
 
 /* Staggered entrance animations */

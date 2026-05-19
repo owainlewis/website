@@ -11,61 +11,67 @@ const SKILLS = [
     command: "/blueprint:spec",
     name: "Spec",
     description:
-      "Write an implementation spec when a task has decisions, invariants, or boundaries worth surfacing before coding.",
+      "Write an implementation spec when a task has decisions, invariants, or contracts worth reviewing before code is written.",
+  },
+  {
+    command: "/blueprint:design-doc",
+    name: "Design Doc",
+    description:
+      "Lightweight technical design document for ambiguous or consequential architecture decisions before implementation.",
   },
   {
     command: "/blueprint:plan",
     name: "Plan",
     description:
-      "Break a project, phase, spec, or rough request into small agent-ready tasks with acceptance criteria and verification.",
+      "Break a spec, brief, or rough request into a portable task list that can be reviewed, dropped into an issue tracker, or delegated.",
   },
   {
-    command: "/blueprint:build",
-    name: "Build",
+    command: "/blueprint:implement",
+    name: "Implement",
     description:
-      "Implement one task or scoped change: make the change, add valuable tests, and verify it works.",
+      "Execute one scoped change: understand the task, make the smallest complete implementation, test it, verify it, report.",
   },
   {
     command: "/blueprint:tdd",
     name: "TDD",
     description:
-      "Use test-first development for behavioral changes. Write a failing test, make it pass, then simplify.",
+      "Test-first variant of implement. Write a failing test, make it pass, then simplify.",
   },
   {
     command: "/blueprint:review",
     name: "Review",
     description:
-      "Review a spec or concrete code changes and report evidence-backed bugs, regressions, and risks.",
+      "Review a spec or concrete code changes for correctness, security, simplicity, robustness, and real tests.",
   },
   {
     command: "/blueprint:refactor",
     name: "Refactor",
     description:
-      "Refactor code to simplify it without changing behavior. Removes duplication, dead code, and unnecessary complexity.",
+      "Improve the shape of existing code without changing behavior. Removes duplication, dead code, and unnecessary complexity.",
   },
   {
-    command: "/blueprint:coverage",
-    name: "Coverage",
+    command: "/blueprint:browser-verify",
+    name: "Browser Verify",
     description:
-      "Evaluate test coverage and fill real gaps with high-value tests. Only adds tests worth having — no filler.",
+      "Verify browser-rendered work in a real browser. For HTML, UI, visual docs, presentations, local apps, and any browser-facing change.",
   },
   {
-    command: "/blueprint:debug",
-    name: "Debug",
+    command: "/blueprint:branch",
+    name: "Branch",
     description:
-      "Debug systematically: observe, hypothesize, test, fix, verify. For broken behavior, failing tests, or anything that doesn't match expectations.",
-  },
-  {
-    command: "/blueprint:compress",
-    name: "Compress",
-    description:
-      "Compress agent-facing instructions to the fewest words that preserve behavior, constraints, and clarity. For specs, plans, prompts, AGENTS.md.",
+      "Create a traceable Git branch for the current task.",
   },
   {
     command: "/blueprint:commit",
     name: "Commit",
     description:
-      "Stage and commit the intended changes with a clear message. Reviews the diff, checks for secrets, explains the why.",
+      "Stage the intended changes and create one clear conventional commit. Reviews the diff, checks for secrets, explains the why.",
+  },
+  {
+    command: "/blueprint:address-pr-feedback",
+    name: "Address PR Feedback",
+    description:
+      "Fetch GitHub PR review feedback, judge each comment, implement valid fixes, verify, and optionally reply.",
   },
 ] as const;
 
@@ -90,17 +96,25 @@ export default function ResourcesPage() {
             You&apos;re in — here are your skills
           </div>
 
-          <h1 className="font-serif text-[clamp(2rem,4.5vw,3.25rem)] tracking-[-0.02em] leading-[1.05] mb-5">
-            Blueprint:{" "}
-            <em className="italic">Claude Code skills</em> to build better
+          <h1 className="font-serif text-[clamp(1.85rem,4vw,2.85rem)] tracking-[-0.02em] leading-[1.08] mb-5">
+            Blueprint: <em className="italic">agent skills</em> to build better
             software with AI.
           </h1>
 
-          <p className="text-[17px] text-secondary max-w-lg mx-auto leading-[1.65] mb-9">
+          <p className="text-[17px] text-secondary max-w-lg mx-auto leading-[1.65] mb-6">
             The exact skills I use to spec, build, review, and ship every
-            project. Install them once, use them forever, and check back —
-            new skills are added regularly.
+            project. Install once, use them forever, and check back — new
+            skills are added regularly.
           </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-mono text-[11px] uppercase tracking-[0.16em] text-muted mb-9">
+            <span>Works with</span>
+            <span className="text-foreground font-medium">Claude Code</span>
+            <span className="text-border">·</span>
+            <span className="text-foreground font-medium">Codex</span>
+            <span className="text-border">·</span>
+            <span className="text-foreground font-medium">Pi</span>
+          </div>
 
           <a
             href={LINKS.blueprint}
@@ -123,21 +137,43 @@ export default function ResourcesPage() {
         {/* Install instructions */}
         <div className="bg-foreground text-white rounded-2xl p-6 sm:p-8 mb-16">
           <h2 className="font-serif text-[22px] tracking-[-0.01em] mb-3">
-            Quick <em className="italic text-accent">install.</em>
+            Quick install.
           </h2>
           <p className="text-white/60 text-[15px] leading-[1.65] mb-5">
-            Run this in your terminal to add Blueprint to Claude Code. Every
-            skill will be available in any project.
+            Install with the skills CLI. Works with Claude Code, Codex, Pi —
+            and any agent that supports the agent skills spec.
           </p>
-          <div className="bg-white/[0.06] rounded-lg p-4 font-mono text-[13px] text-white/80 overflow-x-auto">
-            claude plugin add owainlewis/blueprint
+          <div className="bg-white/[0.06] rounded-lg p-4 font-mono text-[13px] text-white/80 overflow-x-auto mb-3">
+            npx skills add owainlewis/blueprint
+          </div>
+          <p className="text-white/50 text-[13px] font-mono mb-2">
+            <span className="text-white/30">Update later:</span> npx skills update
+          </p>
+
+          <div className="border-t border-white/10 pt-5 mt-6">
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-white/40 mb-2">
+              One extra step for browser-verify
+            </p>
+            <p className="text-white/60 text-[14px] leading-[1.65] mb-4">
+              The <code className="font-mono text-white/80 bg-white/[0.06] px-1.5 py-0.5 rounded text-[12px]">browser-verify</code>{" "}
+              skill needs the Chrome DevTools MCP server. Add it once for your
+              agent:
+            </p>
+            <div className="space-y-2">
+              <div className="bg-white/[0.06] rounded-lg p-4 font-mono text-[13px] text-white/80 overflow-x-auto">
+                claude mcp add chrome-devtools --scope user npx chrome-devtools-mcp@latest
+              </div>
+              <div className="bg-white/[0.06] rounded-lg p-4 font-mono text-[13px] text-white/80 overflow-x-auto">
+                codex mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+              </div>
+            </div>
           </div>
         </div>
 
         {/* All skills */}
         <p className="eyebrow mb-3">The skills</p>
-        <h2 className="font-serif text-[clamp(1.6rem,2.8vw,2rem)] tracking-[-0.02em] leading-[1.15] mb-8">
-          All <em className="italic">ten skills.</em>
+        <h2 className="font-serif text-[clamp(1.5rem,2.6vw,1.85rem)] tracking-[-0.02em] leading-[1.2] mb-8">
+          All eleven skills.
         </h2>
 
         <div className="space-y-4 mb-16">
@@ -172,8 +208,8 @@ export default function ResourcesPage() {
         <div className="border-t border-border pt-16">
           <div className="text-center mb-8">
             <p className="eyebrow mb-3">Next</p>
-            <h2 className="font-serif text-[clamp(1.6rem,2.8vw,2rem)] tracking-[-0.02em] leading-[1.15]">
-              Want to go <em className="italic">deeper?</em>
+            <h2 className="font-serif text-[clamp(1.5rem,2.6vw,1.85rem)] tracking-[-0.02em] leading-[1.2]">
+              Want to go deeper?
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -187,7 +223,7 @@ export default function ResourcesPage() {
                 Work with me
               </p>
               <h3 className="font-serif text-[20px] tracking-[-0.01em] mb-2">
-                Get AI <em className="italic">built for your business.</em>
+                Get AI built for your business.
               </h3>
               <p className="text-[14px] text-secondary leading-[1.65]">
                 Production AI systems designed, built, and shipped in weeks.
@@ -203,7 +239,7 @@ export default function ResourcesPage() {
                 AI Community
               </p>
               <h3 className="font-serif text-[20px] tracking-[-0.01em] mb-2">
-                Join the <em className="italic">AI developer community.</em>
+                Join the AI developer community.
               </h3>
               <p className="text-[14px] text-secondary leading-[1.65]">
                 Courses, live builds, code reviews, and real project templates.

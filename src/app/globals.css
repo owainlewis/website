@@ -56,6 +56,10 @@ body {
   background: var(--accent);
 }
 
+.eyebrow-light {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 /* Staggered entrance animations */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(20px); }
@@ -80,3 +84,12 @@ body {
 .anim-d3 { animation-delay: 260ms; }
 .anim-d4 { animation-delay: 360ms; }
 .anim-d5 { animation-delay: 480ms; }
+
+.dot-grid {
+  background-image: radial-gradient(circle, var(--text-muted) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 0 0;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 85%);
+  mask-image: radial-gradient(ellipse at center, black 50%, transparent 85%);
+  pointer-events: none;
+}

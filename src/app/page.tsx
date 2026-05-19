@@ -30,20 +30,29 @@ export default function HomePage() {
               YouTube
             </a>
             <a
-              href={LINKS.skool}
+              href={LINKS.newsletter}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[12px] sm:text-[13px] text-secondary hover:text-foreground transition-colors hidden sm:block"
             >
-              Community
+              Newsletter
             </a>
             <a
-              href={LINKS.newsletter}
+              href={LINKS.community}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[12px] sm:text-[13px] text-secondary hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-foreground text-white text-[12px] sm:text-[13px] font-medium hover:bg-foreground/85 transition-colors"
             >
-              Newsletter
+              Join AI Engineer
+              <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M1 7h12m0 0L8 2m5 5L8 12"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </a>
           </div>
         </div>
@@ -73,27 +82,27 @@ export default function HomePage() {
             </h1>
 
             <p className="anim-fade-up anim-d2 text-[18px] sm:text-[19px] text-white/70 leading-[1.65] max-w-[560px] mb-10">
-              20 years of shipping production software. Now I help companies
-              build AI systems through my agency, and teach what I learn to an
-              AI developer community.
+              20 years of shipping production software. Now I run AI Engineer
+              — a community for engineers building real AI systems — and ship
+              production AI through my agency.
             </p>
 
             <div className="anim-fade-up anim-d3 flex flex-wrap gap-3">
               <a
-                href={LINKS.gradientWork}
+                href={LINKS.community}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-7 py-3.5 bg-accent text-foreground font-semibold rounded-full hover:brightness-95 active:scale-[0.98] transition-all text-[15px]"
               >
-                Work with me →
+                Join AI Engineer →
               </a>
               <a
-                href={LINKS.skool}
+                href={LINKS.gradientWork}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-7 py-3.5 border border-white/20 bg-white/[0.06] text-white font-semibold rounded-full hover:bg-white/[0.12] hover:border-white/35 active:scale-[0.98] transition-all text-[15px]"
               >
-                Join the community
+                Work with me
               </a>
             </div>
           </div>
@@ -162,16 +171,16 @@ export default function HomePage() {
               >
                 newsletter
               </a>
-              , and with{" "}
+              , and inside{" "}
               <a
-                href={LINKS.skool}
+                href={LINKS.community}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground transition-colors"
               >
-                an AI developer community
-              </a>{" "}
-              in the AI Engineer community.
+                AI Engineer
+              </a>
+              , the community I run for engineers building real AI systems.
             </p>
           </div>
         </div>
@@ -182,21 +191,25 @@ export default function HomePage() {
         <p className="eyebrow mb-6">Two ways to work together</p>
         <div className="grid sm:grid-cols-[1.15fr_1fr] gap-6">
           <a
-            href={LINKS.gradientWork}
+            href={LINKS.community}
             target="_blank"
             rel="noopener noreferrer"
             className="group bg-foreground text-white rounded-2xl p-8 sm:p-10 hover:shadow-xl hover:shadow-foreground/10 hover:-translate-y-1 active:translate-y-0 transition-all duration-300 flex flex-col"
           >
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent mb-5">
+              AI Engineer
+            </p>
             <h3 className="font-serif text-[clamp(1.5rem,2.6vw,1.85rem)] tracking-[-0.02em] leading-[1.2] mb-4">
-              Get AI working <span className="text-accent">in your business.</span>
+              Master AI engineering and{" "}
+              <span className="text-accent">build better software with AI.</span>
             </h3>
-            <p className="text-[17px] text-white/55 leading-[1.7] mb-8 flex-1">
-              You have a problem that AI can solve. I&apos;ll design, build, and
-              ship a production system tailored to your business — in weeks, not
-              months.
+            <p className="text-[17px] text-white/60 leading-[1.7] mb-8 flex-1">
+              Engineers learning to build, ship, and monetise real AI systems.
+              Live builds, code reviews, courses, and project templates from
+              someone shipping this stuff every week.
             </p>
             <span className="inline-flex items-center gap-2 text-[14px] font-medium text-white/80 group-hover:text-accent group-hover:gap-3 transition-all duration-300">
-              gradientwork.com
+              aiengineer.co
               <svg
                 width="14"
                 height="14"
@@ -216,20 +229,24 @@ export default function HomePage() {
           </a>
 
           <a
-            href={LINKS.skool}
+            href={LINKS.gradientWork}
             target="_blank"
             rel="noopener noreferrer"
             className="group bg-card border border-border rounded-2xl p-8 sm:p-10 hover:border-foreground/20 hover:shadow-xl hover:shadow-foreground/[0.04] hover:-translate-y-1 active:translate-y-0 transition-all duration-300 flex flex-col"
           >
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-secondary mb-5">
+              Agency
+            </p>
             <h3 className="font-serif text-[clamp(1.5rem,2.6vw,1.85rem)] tracking-[-0.02em] leading-[1.2] mb-4">
-              Join the AI developer community.
+              Get AI working in your business.
             </h3>
             <p className="text-[17px] text-secondary leading-[1.7] mb-8 flex-1">
-              Engineers learning to build, ship, and monetise AI systems.
-              Courses, live builds, code reviews, and real project templates.
+              You have a problem AI can solve. I&apos;ll design, build, and
+              ship a production system tailored to your business — in weeks,
+              not months.
             </p>
             <span className="inline-flex items-center gap-2 text-[14px] font-medium text-foreground group-hover:gap-3 transition-all duration-300">
-              Join the community
+              gradientwork.com
               <svg
                 width="14"
                 height="14"

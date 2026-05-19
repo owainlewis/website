@@ -214,35 +214,36 @@ export default function ResourcesPage() {
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
             <a
+              href={LINKS.community}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-foreground text-white rounded-xl p-6 hover:shadow-xl hover:shadow-foreground/10 transition-all"
+            >
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent font-medium mb-3">
+                AI Engineer
+              </p>
+              <h3 className="font-serif text-[20px] tracking-[-0.01em] mb-2">
+                Master AI engineering, with people doing it.
+              </h3>
+              <p className="text-[14px] text-white/60 leading-[1.65]">
+                Live builds, code reviews, courses, and project templates for
+                engineers shipping real AI systems.
+              </p>
+            </a>
+            <a
               href={LINKS.gradientWork}
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-card border border-border rounded-xl p-6 hover:border-foreground/20 transition-colors"
             >
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-secondary font-medium mb-3">
-                Work with me
+                Agency
               </p>
               <h3 className="font-serif text-[20px] tracking-[-0.01em] mb-2">
                 Get AI built for your business.
               </h3>
               <p className="text-[14px] text-secondary leading-[1.65]">
                 Production AI systems designed, built, and shipped in weeks.
-              </p>
-            </a>
-            <a
-              href={LINKS.skool}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-card border border-border rounded-xl p-6 hover:border-foreground/20 transition-colors"
-            >
-              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-secondary font-medium mb-3">
-                AI Community
-              </p>
-              <h3 className="font-serif text-[20px] tracking-[-0.01em] mb-2">
-                Join the AI developer community.
-              </h3>
-              <p className="text-[14px] text-secondary leading-[1.65]">
-                Courses, live builds, code reviews, and real project templates.
               </p>
             </a>
           </div>

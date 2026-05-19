@@ -1,7 +1,7 @@
 export const KIT_FORM_ID = "9265258";
 
 export const LINKS = {
-  skool: "https://skool.com/aiengineer",
+  community: "https://aiengineer.co/",
   gradientWork: "https://gradientwork.com",
   youtube: "https://youtube.com/@owainlewis",
   linkedin: "https://linkedin.com/in/owainlewis",

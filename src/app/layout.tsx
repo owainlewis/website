@@ -26,22 +26,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Owain Lewis — AI Engineering",
+  title: "Owain Lewis | AI Engineering",
   description:
-    "I help companies build AI systems that actually work in production. Consulting, community, and content for engineers and business owners.",
+    "Owain Lewis teaches serious builders how to build real software with AI through YouTube, Kit, and AI Engineer.",
   openGraph: {
-    title: "Owain Lewis — AI Engineering",
+    title: "Owain Lewis | AI Engineering",
     description:
-      "I help companies build AI systems that actually work in production.",
+      "Practical AI engineering for serious builders.",
     url: "https://owainlewis.com",
     siteName: "Owain Lewis",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Owain Lewis — AI Engineering",
+    title: "Owain Lewis | AI Engineering",
     description:
-      "I help companies build AI systems that actually work in production.",
+      "Practical AI engineering for serious builders.",
   },
 };
 

@@ -23,7 +23,7 @@ export function KitForm({
         name="email_address"
         placeholder="Your email address"
         required
-        className={`flex-1 px-5 py-3.5 rounded-full text-[15px] leading-none transition-all focus:outline-none focus:ring-2 ${
+        className={`type-small flex-1 rounded-full px-5 py-3.5 transition-all focus:outline-none focus:ring-2 ${
           dark
             ? "bg-white/[0.07] border border-white/[0.08] text-white placeholder:text-white/30 focus:ring-white/15 focus:border-white/15"
             : "bg-card border border-border text-foreground placeholder:text-muted focus:ring-accent/30 focus:border-accent/40"
@@ -31,7 +31,7 @@ export function KitForm({
       />
       <button
         type="submit"
-        className="px-7 py-3.5 bg-accent text-foreground font-semibold rounded-full hover:brightness-95 active:scale-[0.98] transition-all cursor-pointer whitespace-nowrap text-[15px] leading-none"
+        className="type-small cursor-pointer whitespace-nowrap rounded-full bg-accent px-7 py-3.5 font-semibold text-foreground transition-all hover:brightness-95 active:scale-[0.98]"
       >
         {buttonText}
       </button>

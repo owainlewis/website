@@ -28,13 +28,46 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
+}
+
+.type-small {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.type-body {
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.type-lead {
+  font-size: clamp(1.125rem, 1.7vw, 1.3125rem);
+  line-height: 1.55;
+}
+
+.type-title {
+  font-size: clamp(2.125rem, 4.2vw, 3.4375rem);
+  line-height: 1.14;
+}
+
+.type-display {
+  font-size: clamp(2rem, 3.1vw, 2.75rem);
+  line-height: 1.08;
+}
+
+.measure {
+  max-width: 36rem;
+}
+
+.measure-wide {
+  max-width: 44rem;
 }
 
 .eyebrow {
@@ -58,38 +91,4 @@ body {
 
 .eyebrow-light {
   color: rgba(255, 255, 255, 0.7);
-}
-
-/* Staggered entrance animations */
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes scale-in {
-  from { opacity: 0; transform: scale(0.96); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.anim-fade-up {
-  animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.anim-scale-in {
-  animation: scale-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.anim-d1 { animation-delay: 80ms; }
-.anim-d2 { animation-delay: 160ms; }
-.anim-d3 { animation-delay: 260ms; }
-.anim-d4 { animation-delay: 360ms; }
-.anim-d5 { animation-delay: 480ms; }
-
-.dot-grid {
-  background-image: radial-gradient(circle, var(--text-muted) 1px, transparent 1px);
-  background-size: 24px 24px;
-  background-position: 0 0;
-  -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 85%);
-  mask-image: radial-gradient(ellipse at center, black 50%, transparent 85%);
-  pointer-events: none;
 }

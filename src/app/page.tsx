@@ -4,6 +4,7 @@ import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "YouTube", href: LINKS.youtube },
+  { label: "Instagram", href: LINKS.instagram },
   { label: "Newsletter", href: "#newsletter" },
   { label: "AI Engineer", href: LINKS.community },
 ] as const;

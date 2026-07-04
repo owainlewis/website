@@ -16,14 +16,14 @@ export function KitForm({
       action={`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`}
       method="post"
       data-sv-form={KIT_FORM_ID}
-      className={`flex flex-col sm:flex-row gap-3 w-full ${className}`}
+      className={`flex w-full min-w-0 flex-col gap-3 sm:flex-row ${className}`}
     >
       <input
         type="email"
         name="email_address"
         placeholder="Your email address"
         required
-        className={`type-small flex-1 rounded-full px-5 py-3.5 transition-all focus:outline-none focus:ring-2 ${
+        className={`type-small min-w-0 flex-1 rounded-full px-5 py-3.5 transition-all focus:outline-none focus:ring-2 ${
           dark
             ? "bg-white/[0.07] border border-white/[0.08] text-white placeholder:text-white/30 focus:ring-white/15 focus:border-white/15"
             : "bg-card border border-border text-foreground placeholder:text-muted focus:ring-accent/30 focus:border-accent/40"

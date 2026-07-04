@@ -204,6 +204,12 @@ export default function HomePage() {
               YouTube
             </a>
             <a
+              href={LINKS.instagram}
+              className="transition hover:text-foreground"
+            >
+              Instagram
+            </a>
+            <a
               href={LINKS.newsletter}
               className="transition hover:text-foreground"
             >

@@ -4,6 +4,7 @@ export const LINKS = {
   community: "https://aiengineer.co/",
   gradientWork: "https://gradientwork.com",
   youtube: "https://youtube.com/@owainlewis",
+  instagram: "https://www.instagram.com/_owainlewis/",
   linkedin: "https://linkedin.com/in/owainlewis",
   newsletter: "https://newsletter.aiengineer.co",
   blueprint: "https://github.com/owainlewis/blueprint",

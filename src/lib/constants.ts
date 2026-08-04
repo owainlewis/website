@@ -5,7 +5,7 @@ export const LINKS = {
   gradientWork: "https://gradientwork.com",
   youtube: "https://youtube.com/@owainlewis",
   instagram: "https://www.instagram.com/_owainlewis/",
-  linkedin: "https://linkedin.com/in/owainlewis",
+  linkedin: "https://www.linkedin.com/in/lewisowain/",
   newsletter: "https://newsletter.aiengineer.co",
   blueprint: "https://github.com/owainlewis/blueprint",
 } as const;

@@ -180,17 +180,10 @@ export default function HomePage() {
           <p className="type-lead measure text-secondary">
             Looking for the free agent skills? Get them from{" "}
             <a
-              href="/youtube"
+              href={LINKS.start}
               className="text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground"
             >
-              YouTube
-            </a>{" "}
-            or{" "}
-            <a
-              href="/linkedin"
-              className="text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground"
-            >
-              LinkedIn
+              AI Engineer
             </a>
             .
           </p>

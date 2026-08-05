@@ -20,10 +20,10 @@
   --color-secondary: var(--text-secondary);
   --color-muted: var(--text-muted);
   --color-surface: var(--surface);
-  --font-sans: var(--font-dm-sans);
-  --font-display: var(--font-bricolage-grotesque);
-  --font-serif: var(--font-instrument-serif);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "DM Sans Variable", Arial, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", Arial, sans-serif;
+  --font-serif: "Instrument Serif", "Times New Roman", serif;
+  --font-mono: "Geist Mono Variable", monospace;
 }
 
 html {
